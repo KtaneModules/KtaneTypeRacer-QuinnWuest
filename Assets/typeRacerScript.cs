@@ -9,12 +9,25 @@ public class TypeRacerScript : MonoBehaviour
     public KMBombModule Module;
     public KMBombInfo BombInfo;
     public KMAudio Audio;
+    public KMRuleSeedable RuleSeedable;
+
     public KMSelectable[] LetterSels;
+    public KMSelectable GoButton;
+    public KMSelectable DeleteButton;
+    public TextMesh[] ButtonTexts;
+    public GameObject CarObj;
+    public TextMesh ScreenText;
 
     private int _moduleId;
+    private int _aIndex;
     private static int _moduleIdCounter = 1;
     private bool _moduleSolved;
 
+    private bool _isTyping;
+    private int[] _shuffle = new int[26];
+    private string _display = "";
+
+    private string LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private string[][] WORDLIST = new string[10][]
     {
         new string[8]
@@ -42,6 +55,67 @@ public class TypeRacerScript : MonoBehaviour
     private void Start()
     {
         _moduleId = _moduleIdCounter++;
+        _shuffle = Enumerable.Range(0, 26).ToArray().Shuffle();
+        foreach (var i in _shuffle)
+        {
+            ButtonTexts[i].text = LETTERS[_shuffle[i]].ToString();
+            if (LETTERS[_shuffle[i]].ToString() == "A")
+                _aIndex = i != 25 ? i / 5 : 4;
+        }
+        for (int i = 0; i < LetterSels.Length; i++)
+        {
+            int j = i;
+            LetterSels[i].OnInteract += delegate ()
+            {
+                if (!_moduleSolved && _isTyping)
+                    LetterPress(j);
+                return false;
+            };
+        }
+        GoButton.OnInteract += delegate ()
+        {
+            if (!_moduleSolved)
+                GoButtonPress();
+            return false;
+        };
+        DeleteButton.OnInteract += delegate ()
+        {
+            if (!_moduleSolved)
+                DeleteButtonPress();
+            return false;
+        };
+    }
+
+    private void LetterPress(int letter)
+    {
+        _display += LETTERS[_shuffle[letter]];
+        Debug.LogFormat("{0}", _display);
+        ScreenText.text = _display;
+    }
+
+    private void GoButtonPress()
+    {
+        if (!_isTyping)
+        {
+            _isTyping = true;
+            StartCoroutine(Timer());
+        }
+    }
+
+    private void DeleteButtonPress()
+    {
         
+    }
+
+    private IEnumerator Timer()
+    {
+        var duration = 15f;
+        var elapsed = 0f;
+        while (elapsed < duration)
+        {
+            CarObj.transform.localPosition = new Vector3(Mathf.Lerp(-0.0625f, 0.025f, elapsed / duration), 0f, 0f);
+            yield return null;
+            elapsed += Time.deltaTime;
+        }
     }
 }
