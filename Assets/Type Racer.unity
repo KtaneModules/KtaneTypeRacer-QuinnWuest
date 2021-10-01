@@ -259,7 +259,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &1789129431
+--- !u!1001 &1692237046
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -297,6 +297,10 @@ Prefab:
     - target: {fileID: 4487485745213038, guid: 681d646e86d543945bb5c0ff7d95cdc8, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1918826436084940, guid: 681d646e86d543945bb5c0ff7d95cdc8, type: 2}
+      propertyPath: m_Name
+      value: Type Racer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 681d646e86d543945bb5c0ff7d95cdc8, type: 2}
