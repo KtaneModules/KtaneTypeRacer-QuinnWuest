@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: bd55e0436af61fd439a4279d072345c5
+guid: 14de4e0935240644db6a477f782dac6c
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: quarterCircle
+    100000: Button
+    100002: //RootNode
+    400000: Button
+    400002: //RootNode
+    2100000: ButtonMat
+    2300000: Button
+    3300000: Button
+    4300000: Button
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -39,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
