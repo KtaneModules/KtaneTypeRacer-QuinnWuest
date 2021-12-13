@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: typeRacer
+  id: TypeRacerModule
   title: Type Racer
-  author: JakkOfKlubs
+  author: Quinn Wuest
   description: 'Increase your typing speed while racing against others...  or in this
     case, racing against the bomb.
 
-    Made by JakkOfKlubs, or Zeke, or Ezekiel, or whatever you wanna call me idc'
+    Made by Quinn Wuest'
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: d1296fcdf4ebbd2478904371ea6e0c12, type: 3}

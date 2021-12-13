@@ -201,13 +201,10 @@ public class TypeRacerScript : MonoBehaviour
         if (!m.Success)
             yield break;
         yield return null;
-        if (_isTyping)
+        for (int i = 0; i < 7; i++)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                DeleteButtonPress();
-                yield return new WaitForSeconds(0.05f);
-            }
+            DeleteButtonPress();
+            yield return new WaitForSeconds(0.05f);
         }
         GoButtonPress();
         yield return new WaitForSeconds(0.1f);
