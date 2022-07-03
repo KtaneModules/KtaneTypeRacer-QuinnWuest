@@ -137,7 +137,7 @@ public class TypeRacerScript : MonoBehaviour
         if (!isSolve)
             Audio.PlaySoundAtTransform("carStrike", transform);
         _endCarPos = isSolve ? 0.025f : -0.0625f;
-        var duration = 1.5f;
+        var duration = isSolve ? 0.5f : 1.5f;
         var elapsed = 0f;
         while (elapsed < duration)
         {
