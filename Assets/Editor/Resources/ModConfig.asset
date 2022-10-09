@@ -14,11 +14,9 @@ MonoBehaviour:
   id: typeRacer
   title: Type Racer
   author: Quinn Wuest
-  description: 'Increase your typing speed while racing against others...  or in this
-    case, racing against the bomb.
-
-
-    Made by Quinn Wuest'
+  description: "Increase your typing speed while racing against others...  or in this
+    case, racing against the bomb.\n\nMade by Quinn Wuest\n\n[url=https://ktane.timwi.de/HTML/Type%20Racer.html]Manual
+    HTML[/url]\r\n[url=https://ktane.timwi.de/HTML/Type%20Racer.pdf]Manual PDF[/url]"
   version: 1.0
   outputFolder: build
   previewImage: {fileID: 2800000, guid: db788daacb04e294a96c9a93201f9047, type: 3}
